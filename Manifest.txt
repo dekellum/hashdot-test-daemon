@@ -1,0 +1,8 @@
+Manifest.txt
+README.rdoc
+History.rdoc
+Rakefile
+init/hashdot-daemon
+lib/hashdot-daemon/base.rb
+lib/hashdot-daemon.rb
+test/test_daemon.rb

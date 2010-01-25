@@ -1,0 +1,19 @@
+#!/usr/bin/env jruby
+#-*- ruby -*-
+#. hashdot.chdir            = /opt/var/hashdot-daemon
+#. hashdot.profile         += daemon
+#. hashdot.pid_file         = hashdot-daemon.pid
+#. hashdot.io_redirect.file = hashdot-daemon.log
+
+require 'rubygems'
+
+# load File.join( File.dirname(__FILE__), "..", "lib", "hashdot-daemon", "base.rb" )
+
+gem "hashdot-daemon", "= 1.0.0"
+
+require 'rjack-logback'
+require 'hashdot-daemon'
+
+RJack::Logback.config_console
+
+Hashdot::Daemon::Runner.new.run
