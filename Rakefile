@@ -32,13 +32,13 @@ end
 
 t.define_tasks
 
-FileList[ "init.src/*" ].exclude( "*~" ).each do |efile|
+FileList[ "init/*.erb" ].each do |efile|
   b = binding
   version = t.version
-  ifile = File.join( 'init', File.basename( efile ) )
+  ifile = efile.sub( /\.erb$/, '' )
   file ifile => [ efile, 'lib/hashdot-daemon/base.rb' ] do
     require 'erb'
-    puts "#{efile} -generate-> #{ifile}"
+    puts "#{efile} --generate--> #{ifile}"
     open( ifile, 'w' ) do |outf|
       outf.write( ERB.new( IO.read( efile ) ).result( b ) )
     end
