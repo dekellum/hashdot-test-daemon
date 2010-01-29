@@ -31,3 +31,32 @@ t.specify do |h|
 end
 
 t.define_tasks
+
+FileList[ "init/*" ].exclude( "*~" ).each do |infile|
+  file infile => [ 'lib/hashdot-daemon/base.rb' ] do
+    changed = false
+    out = []
+    open( infile ) do |inf|
+      inf.each do |line|
+        if ( !changed &&
+             line =~ /^gem[\(]?\s*["']#{t.name}["']\s*,\s*["']\s*[>=~]+\s*([0-9\.]+)["']\s*[\)]?\s*#auto-update\s*$/ )
+          if $1 != t.version
+            out << line.sub( $1, t.version )
+            changed = true
+          else
+            break
+          end
+        else
+            out << line
+        end
+      end
+    end
+
+    if changed
+      cp( infile, infile + '~', :preserve => true )
+      puts "#{infile} -> #{t.version}"
+      open( infile, 'w' ) { |otf| otf.puts out }
+    end
+
+  end
+end
