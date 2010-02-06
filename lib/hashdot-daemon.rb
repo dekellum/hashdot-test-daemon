@@ -17,6 +17,7 @@
 require 'hashdot-daemon/base'
 
 require 'rjack-slf4j'
+require 'java'
 
 module Hashdot
   module Daemon
@@ -25,11 +26,26 @@ module Hashdot
       def initialize
         @log = SLF4J[self.class]
         @log.info "Initialized (SLF4J::VERSION = #{SLF4J::VERSION})"
+        ShutdownHandler.register
       end
 
       def run
-        @log.info( "started, sleeping..." )
+        @log.info( "Started, sleeping..." )
         sleep 9000
+      end
+    end
+
+    class ShutdownHandler
+      Thread  = Java::java.lang.Thread
+      Runtime = Java::java.lang.Runtime
+      include Java::java.lang.Runnable
+      def run
+        SLF4J[self.class].info "Shutting down (sleep 3)"
+        sleep 3.0
+      end
+
+      def self.register
+        Runtime::runtime.add_shutdown_hook( Thread.new( new ) )
       end
     end
   end
