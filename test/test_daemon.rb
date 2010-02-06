@@ -24,6 +24,7 @@ require 'rubygems'
 
 require 'rjack-logback'
 require 'hashdot-daemon'
+require 'test/unit'
 
 RJack::Logback.config_console
 
