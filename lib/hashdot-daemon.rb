@@ -30,9 +30,19 @@ module Hashdot
       end
 
       def run
-        @log.info( "Started, sleeping..." )
-        sleep 9000
+        loop do
+          i = 2 * rand
+          @log.info { "Sleep #{i}" }
+          sleep i
+          if rand(100) == 0
+            cause = rand(3) == 0 ? "KILL" : "TERM"
+            @log.info { "Unexpected #{cause}" }
+            Process.kill( cause, 0 )
+            break
+          end
+        end
       end
+
     end
 
     class ShutdownHandler
