@@ -3,6 +3,7 @@ README.rdoc
 History.rdoc
 Rakefile
 init/hashdot-test-daemon
+bin/hashdot-test-fg
 lib/hashdot-test-daemon/base.rb
 lib/hashdot-test-daemon.rb
 test/test_daemon.rb
