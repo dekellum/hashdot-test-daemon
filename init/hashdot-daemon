@@ -4,11 +4,11 @@
 #. hashdot.pid_file         = ./hashdot-daemon.pid
 #. hashdot.io_redirect.file = ./hashdot-daemon.log
 
-#<%# ERB Template %> Generated from <%= efile %>
+# Generated from init/hashdot-daemon.erb
 
 require 'rubygems'
 
-gem( "hashdot-daemon", "= <%= version %>" )
+gem( "hashdot-daemon", "= 1.0.0" )
 
 require 'rjack-logback'
 require 'hashdot-daemon'

@@ -19,7 +19,7 @@ $LOAD_PATH << './lib'
 require 'hashdot-daemon/base'
 
 require 'rubygems'
-gem     'rjack-tarpit', '~> 1.1.0'
+gem     'rjack-tarpit', '~> 1.2.0'
 require 'rjack-tarpit'
 
 t = RJack::TarPit.new( 'hashdot-daemon', Hashdot::Daemon::VERSION )
@@ -30,18 +30,19 @@ t.specify do |h|
                     [ 'rjack-logback', '~> 0.9.17.0' ] ]
 end
 
-t.define_tasks
-
-FileList[ "init/*.erb" ].each do |efile|
-  b = binding
-  version = t.version
-  ifile = efile.sub( /\.erb$/, '' )
-  file ifile => [ efile, "lib/#{t.name}/base.rb" ] do
-    require 'erb'
-    puts "#{efile} --generate--> #{ifile}"
-    open( ifile, 'w' ) do |outf|
-      outf.write( ERB.new( IO.read( efile ) ).result( b ) )
-    end
-    chmod( 0755, ifile )
-  end
+task :check_init_versions do
+  t.test_line_match( 'init/hashdot-daemon',
+                      /^gem.+#{t.name}/, /= #{t.version}/ )
 end
+
+task :check_history_version do
+  t.test_line_match( 'History.rdoc', /^==/, / #{t.version} / )
+end
+task :check_history_date do
+  t.test_line_match( 'History.rdoc', /^==/, /\([0-9\-]\)$/ )
+end
+
+task :gem  => [ :check_init_versions, :check_history_version ]
+task :push => [ :check_history_date ]
+
+t.define_tasks
