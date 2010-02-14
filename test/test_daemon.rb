@@ -23,7 +23,7 @@ $LOAD_PATH.unshift File.join( TEST_DIR, "..", "lib" )
 require 'rubygems'
 
 require 'rjack-logback'
-require 'hashdot-daemon'
+require 'hashdot-test-daemon'
 require 'test/unit'
 
 RJack::Logback.config_console

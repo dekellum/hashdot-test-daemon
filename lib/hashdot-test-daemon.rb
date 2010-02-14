@@ -14,7 +14,7 @@
 # permissions and limitations under the License.
 #++
 
-require 'hashdot-daemon/base'
+require 'hashdot-test-daemon/base'
 
 require 'rjack-slf4j'
 require 'java'
@@ -28,7 +28,8 @@ module Hashdot
       include RJack
       def initialize
         @log = SLF4J[self.class]
-        @log.info "Initialized (SLF4J::VERSION = #{SLF4J::VERSION})"
+        @log.info "Initialized hashdot-daemon (VERSION = #{VERSION})"
+        @log.info "SLF4J::VERSION = #{SLF4J::VERSION}"
         ShutdownHandler.register
       end
 

@@ -2,7 +2,7 @@ Manifest.txt
 README.rdoc
 History.rdoc
 Rakefile
-init/hashdot-daemon
-lib/hashdot-daemon/base.rb
-lib/hashdot-daemon.rb
+init/hashdot-test-daemon
+lib/hashdot-test-daemon/base.rb
+lib/hashdot-test-daemon.rb
 test/test_daemon.rb

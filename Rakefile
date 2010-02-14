@@ -16,13 +16,13 @@
 #++
 
 $LOAD_PATH << './lib'
-require 'hashdot-daemon/base'
+require 'hashdot-test-daemon/base'
 
 require 'rubygems'
 gem     'rjack-tarpit', '~> 1.2.0'
 require 'rjack-tarpit'
 
-t = RJack::TarPit.new( 'hashdot-daemon', Hashdot::Daemon::VERSION )
+t = RJack::TarPit.new( 'hashdot-test-daemon', Hashdot::Daemon::VERSION )
 
 t.specify do |h|
   h.developer( "David Kellum", "dek-oss@gravitext.com" )
@@ -31,7 +31,7 @@ t.specify do |h|
 end
 
 task :check_init_versions do
-  t.test_line_match( 'init/hashdot-daemon',
+  t.test_line_match( 'init/hashdot-test-daemon',
                       /^gem.+#{t.name}/, /= #{t.version}/ )
 end
 
