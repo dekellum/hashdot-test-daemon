@@ -1,10 +1,12 @@
 = hashdot-daemon
 
+* http://github.com/dekellum/hashdot-test-daemon
+* http://gravitext.com/#vblog
 * http://hashdot.sourceforge.net/
 
 == Description
 
-Sample hashdot launched daemon packaged as gem.
+Sample/test hashdot launched daemon packaged as gem.
 
 == License
 
