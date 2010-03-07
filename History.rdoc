@@ -1,2 +1,6 @@
+=== 1.1.0 (2010-3-7)
+ * Upgrade slf4j/logback dependencies
+ * Set gem platform to java
+
 === 1.0.0 (2010-2-13)
  * Initial version
