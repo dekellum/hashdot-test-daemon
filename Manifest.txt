@@ -1,9 +1,9 @@
+History.rdoc
 Manifest.txt
 README.rdoc
-History.rdoc
 Rakefile
-init/hashdot-test-daemon
 bin/hashdot-test-fg
+init/hashdot-test-daemon
 lib/hashdot-test-daemon/base.rb
 lib/hashdot-test-daemon.rb
 test/test_daemon.rb
