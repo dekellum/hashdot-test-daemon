@@ -1,3 +1,5 @@
+=== 1.2.0 (TBD)
+
 === 1.1.0 (2010-3-7)
 * Upgrade slf4j/logback dependencies
 * Set gem platform to java
