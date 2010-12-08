@@ -13,8 +13,8 @@ t = RJack::TarPit.new( 'hashdot-test-daemon',
 
 t.specify do |h|
   h.developer( "David Kellum", "dek-oss@gravitext.com" )
-  h.extra_deps += [ [ 'rjack-slf4j',   '~> 1.5.11' ],
-                    [ 'rjack-logback', '~> 0.9.18' ] ]
+  h.extra_deps += [ [ 'rjack-slf4j',   '~> 1.6.1' ],
+                    [ 'rjack-logback', '~> 1.0.0' ] ]
 end
 
 task :check_init_versions do
