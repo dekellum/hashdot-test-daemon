@@ -4,7 +4,7 @@ $LOAD_PATH << './lib'
 require 'hashdot-test-daemon/base'
 
 require 'rubygems'
-gem     'rjack-tarpit', '~> 1.2.0'
+gem     'rjack-tarpit', '~> 1.3.0'
 require 'rjack-tarpit'
 
 t = RJack::TarPit.new( 'hashdot-test-daemon',
