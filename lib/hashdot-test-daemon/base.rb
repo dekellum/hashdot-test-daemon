@@ -1,5 +1,5 @@
 #--
-# Copyright (c) 2010 David Kellum
+# Copyright (c) 2010-2011 David Kellum
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you
 # may not use this file except in compliance with the License.  You
@@ -16,6 +16,6 @@
 
 module Hashdot
   module Daemon
-    VERSION = "1.2.0"
+    VERSION = "1.2.1"
   end
 end

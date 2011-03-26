@@ -4,7 +4,7 @@ $LOAD_PATH << './lib'
 require 'hashdot-test-daemon/base'
 
 require 'rubygems'
-gem     'rjack-tarpit', '~> 1.2.0'
+gem     'rjack-tarpit', '~> 1.3.0'
 require 'rjack-tarpit'
 
 t = RJack::TarPit.new( 'hashdot-test-daemon',
@@ -14,7 +14,7 @@ t = RJack::TarPit.new( 'hashdot-test-daemon',
 t.specify do |h|
   h.developer( "David Kellum", "dek-oss@gravitext.com" )
   h.extra_deps += [ [ 'rjack-slf4j',   '~> 1.6.1' ],
-                    [ 'rjack-logback', '~> 1.0.0' ] ]
+                    [ 'rjack-logback', '~> 1.1.1' ] ]
 end
 
 task :check_init_versions do
