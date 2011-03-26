@@ -16,6 +16,6 @@
 
 module Hashdot
   module Daemon
-    VERSION = "1.2.0"
+    VERSION = "1.2.1"
   end
 end
