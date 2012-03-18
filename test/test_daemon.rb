@@ -16,19 +16,20 @@
 # permissions and limitations under the License.
 #++
 
-TEST_DIR = File.dirname(__FILE__)
-
-$LOAD_PATH.unshift File.join( TEST_DIR, "..", "lib" )
-
 require 'rubygems'
+require 'bundler/setup'
 
 require 'rjack-logback'
+RJack::Logback.config_console( :stderr => true )
+
 require 'hashdot-test-daemon'
-require 'test/unit'
+
+require 'minitest/unit'
+require 'minitest/autorun'
 
 RJack::Logback.config_console
 
-class TestDaemon < Test::Unit::TestCase
+class TestDaemon < MiniTest::Unit::TestCase
   include Hashdot::Daemon
   def test_daemon
     assert Runner.new
