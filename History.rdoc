@@ -1,4 +1,6 @@
 === 1.2.3 (TBD)
+* Upgrade to tarpit ~> 2.0, bundler Gemfile, gemspec (build)
+* Use minitest ~> 2.2 (build)
 
 === 1.2.2 (2011-9-11)
 * Broaden to rjack-logback ~> 1.1
