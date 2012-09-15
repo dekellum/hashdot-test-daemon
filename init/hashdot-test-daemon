@@ -7,7 +7,7 @@
 #. hashdot.vm.options += -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled
 
 require 'rubygems'
-gem( "hashdot-test-daemon", "= 1.2.3" )
+gem( "hashdot-test-daemon", "= 1.2.4" )
 
 require 'rjack-logback'
 RJack::Logback.config_console( :full => true, :thread => true )

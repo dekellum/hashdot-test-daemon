@@ -1,3 +1,5 @@
+=== 1.2.4 (TBD)
+
 === 1.2.3 (2012-3-18)
 * Upgrade to tarpit ~> 2.0, bundler Gemfile, gemspec (build)
 * Use minitest ~> 2.2 (build)

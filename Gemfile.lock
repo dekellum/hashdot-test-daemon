@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hashdot-test-daemon (1.2.3-java)
+    hashdot-test-daemon (1.2.4-java)
       rjack-logback (~> 1.1)
       rjack-slf4j (~> 1.6.1)
 
